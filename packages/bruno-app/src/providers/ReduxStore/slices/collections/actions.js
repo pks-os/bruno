@@ -1194,11 +1194,9 @@ export const hydrateCollectionWithUiStateSnapshot = (payload) => (dispatch, getS
     });
   };
 
-  export const revealInFinder = (collectionPath) => () => {
+  export const showInFolder = (collectionPath) => () => {
     return new Promise((resolve, reject) => {
       const { ipcRenderer } = window;
-  
-      ipcRenderer.invoke('renderer:reveal-in-finder', collectionPath).then(resolve).catch(reject);
+      ipcRenderer.invoke('renderer:show-in-folder', collectionPath).then(resolve).catch(reject);
     });
   };
-  
